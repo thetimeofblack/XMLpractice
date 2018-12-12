@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<zoo>
+  <animal species="elephant" weight="500">
+    <location>entrance</location>
+    <keeper>Sally Sunshine</keeper>
+  </animal>
+  <animal species="duck" weight="2">
+    <location>Aquahouse</location>
+    <keeper>Steve Sportsman</keeper>
+  </animal>
+  <animal species="dolphin" weight="80">
+    <location>Aquahouse</location>
+    <keeper>Steve Sportsman</keeper>
+  </animal>
+  <animal species="giraffe" weight="250">
+    <location>central park</location>
+    <keeper>Sarah Strange</keeper>
+  </animal>
+</zoo>
