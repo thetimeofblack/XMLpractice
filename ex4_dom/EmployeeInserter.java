@@ -10,9 +10,9 @@ import org.w3c.dom.ls.*;
 
 public class EmployeeInserter {
 
-	static String file = "employees.xml";
+	static String file = "ex4_dom/employees.xml";
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws TransformerException{
 		if (args.length != 3) {
 			System.out.println("Usage: java EmployeeInserter <firstName> <lastName> <workingHours>");
 			System.exit(0);
@@ -31,8 +31,16 @@ public class EmployeeInserter {
 			Element newEmployee = createNewEmployee(doc, firstName, lastName, workingHours);
 
 			//***** Insert code here... *****
-
+			rootElement.appendChild(newEmployee);
 			System.out.println(prettyPrintXML(doc));
+			// write the modified content into an xml file
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(new File(file));
+			transformer.transform(source, result);
+	 
+			System.out.println("Done");
 		}
 		catch(ParserConfigurationException pce) {
 			System.out.println(pce.getMessage());
@@ -49,8 +57,16 @@ public class EmployeeInserter {
 			String lastName, String workingHours ) {
 
 		Element newEmployee = doc.createElement("employee");
-
-		//***** Insert code here... *****
+		Element newFirstName = doc.createElement("firstName"); 
+		Element newLastName = doc.createElement("lastName"); 
+		Element newworkingHours = doc.createElement("workingHours");
+		newFirstName.setTextContent(firstName);
+		newLastName.setTextContent(lastName);
+		newworkingHours.setTextContent(workingHours);
+		newEmployee.appendChild(newFirstName);
+		newEmployee.appendChild(newLastName);
+		newEmployee.appendChild(newworkingHours);
+		//***** Insert code here... *****	
 
 		return newEmployee;
 	}
