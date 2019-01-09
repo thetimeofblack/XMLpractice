@@ -1,0 +1,9 @@
+﻿
+<cities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./cities.xsd">
+  <city name="Kiel">
+    <inhabitants>235366</inhabitants>
+  </city>
+  <city name="Lübeck">
+    <inhabitants>211213</inhabitants>
+  </city>
+</cities>

@@ -1,0 +1,18 @@
+<!ELEMENT appointment (appointmentInfo, participantList)>
+
+<!ELEMENT appointmentInfo (message, message, message)>
+
+<!ATTLIST appointmentInfo
+createdBy IDREF #REQUIRED
+creationDate CDATA #REQUIRED
+shiftable (yes | no) "no"
+regular (yes | no) "no"
+type (teaching | research | projects | private) "teaching">
+
+<!ELEMENT message (#PCDATA)>
+
+<!ELEMENT participantList (person*)>
+
+<!ELEMENT person (#PCDATA)>
+
+<!ATTLIST person id ID #REQUIRED>

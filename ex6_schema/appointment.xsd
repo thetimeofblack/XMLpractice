@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="appointment" type="AppointmentType"></xs:element>
+  
+  <xs:complexType type="AppointmentType" >
+        <xs:sequence>
+            <xs:element name="appointmentInfo"  type="InfoType" ></xs:element>       
+            <xs:element name="participantList"      type="PersonType" ></xs:element>       
+        </xs:sequence>  
+  </xs:complexType>
+
+<xs:complexType type="InfoType">
+        <xs:sequence>
+        <xs:element name="mesage" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>        
+        </xs:sequence>
+        <xs:attribute name="creationDate" type="xs:string"   use="required"/>
+        <xs:attribute name="createdBy"     type="xs:IDREF"     use="required"/>
+        <xs:attribute name="shiftable"          fixed="no" />
+        <xs:attribute name="regular"            fixed="no"/>
+        <xs:attribute name="type"             fixed="teaching"/>            
+</xs:complexType>
+
+<xs:complexType type="PersonType">
+          <xs:sequence>
+                <xs:element name="person" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+</xs:complexType>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="element" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:schema>

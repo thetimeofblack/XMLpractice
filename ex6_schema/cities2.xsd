@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="cities" type="cities">
+    <xs:complexType name="cities">
+      <xs:sequence>
+        <xs:element name="city" type="CityType" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    
+<xs:complexType name="CityType">
+        <xs:sequence>
+            <xs:element name="inhabitants" type="xs:positiveInteger"></xs:element>        
+        </xs:sequence>
+</xs:complexType>    
+<xs:attribute name="name" type="xs:string" use="required"/>
+</xs:element>
+</xs:schema>

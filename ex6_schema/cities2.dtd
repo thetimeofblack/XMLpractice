@@ -1,0 +1,4 @@
+<!ELEMENT cities (city+)>
+<!ELEMENT city (inhabitants)>
+<!ATTLIST city name CDATA #REQUIRED>
+<!ELEMENT inhabitants (#PCDATA)>

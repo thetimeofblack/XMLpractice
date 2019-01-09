@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<appointment orderDate="2008-01-24" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:noNamespaceSchemaLocation="appointment.xsd">
+               
+<appointmentInfo  >
+        <message>
+        
+        </message>
+</appointmentInfo>
+<participantList>
+
+
+</participantList>
+</appointment>
