@@ -30,10 +30,36 @@ public class ModifyXMLFile {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = dBuilder.parse(fXmlFile);
-
+		//add age element to the employee	
 		Node employee = doc.getElementsByTagName("employee").item(0);
- 
+		Element AgeElement  = doc.createElement("age"); 
+		AgeElement.setTextContent("12");
+		employee.appendChild(AgeElement);
+		
+		NodeList employeecomponent= employee.getChildNodes();
 		//***** Insert code here... *****
+		
+		/*
+		for(int i = 0 ; i<employeecomponent.getLength(); i++) {
+			Node firstname = employeecomponent.item(i); 
+			System.out.println(firstname.getNodeName());
+			System.out.println(firstname.getTextContent());
+		
+		}
+		*/
+		
+		//update the value of working Hours
+		NodeList employeelist = doc.getElementsByTagName("employee");
+		
+		for(int i = 0 ; i<employeelist.getLength() ; i++) {
+			Node employeeEntity = employeelist.item(i) ; 
+			NodeList employeecomponents = employeeEntity.getChildNodes();
+			for(int j = 0 ;j< employeecomponents.getLength(); j++ ) {
+				if(employeecomponents.item(j).getNodeName()=="workingHours") {
+						employeecomponents.item(j).setTextContent(String.valueOf(i+12));
+				}
+			}
+		}
 		
 		
  
