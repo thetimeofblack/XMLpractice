@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE AviationDatabase SYSTEM "AviationDatabase.dtd">
+
+<AviationDatabase>
+            <Airports>
+                 <Airport token="Shanghai"  city="Shanghai" country = "China"></Airport> 
+                 <Airport token="Germany"  city="Hamburg"  country="Germany"></Airport>
+            </Airports>
+            
+            <Airlines>
+                  <Airline token= "GermanyToShanghai" name="PuDong airport"  homebase="Germany">
+                   <Flight flightNo="ETS" from="Germany" to="Shanghai"></Flight>                  
+                  </Airline> 
+                  
+                  <Airline token="ShanghaiToGermany" name="Hamburg airport" homebase="Shanghai">               
+                   <Flight flightNo="ENS" from="Shanghai" to="Germany"></Flight>                  
+                  </Airline>            
+            </Airlines>
+            
+            <Employees>
+                  <Employee ssn="abcdefg" firstName="Yining" lastName="He">
+                                 <FlightCrewMember>
+                                         <flyingHours>10</flyingHours>
+                                 </FlightCrewMember>
+                                 <Contract dateOfSigning="11/11/2018" fixedTerm="false" airlineToken="ShanghaiToGermany"></Contract>
+                  </Employee>  
+                  
+                  <Employee ssn="master" firstName="XiaoFang" lastName="He">
+                                  <GroundCrewMember>
+                                          <phone>1147823723</phone>
+                                  </GroundCrewMember>
+                                  <Contract dateOfSigning="20/09/2018" fixedTerm="true" airlineToken="GermanyToShanghai"></Contract>
+                  </Employee>
+                  
+            </Employees>
+</AviationDatabase>
